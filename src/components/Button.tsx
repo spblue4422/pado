@@ -14,28 +14,28 @@ interface VariantStyle {
 
 const ButtonVariantMap: Record<ButtonVariant, VariantStyle> = {
     default: {
-        backgroundColor: '',
-        hoverColor: '',
-        activeColor: '',
-        color: ''
+        backgroundColor: oc.cyan[5],
+        hoverColor: oc.cyan[7],
+        activeColor: oc.cyan[9],
+        color: oc.gray[0]
     },
     primary: {
-        backgroundColor: '',
-        hoverColor: '',
-        activeColor: '',
-        color: ''
+        backgroundColor: oc.cyan[1],
+        hoverColor: oc.cyan[2],
+        activeColor: oc.cyan[0],
+        color: oc.gray[1]
     },
     secondary: {
-        backgroundColor: '',
-        hoverColor: '',
-        activeColor: '',
-        color: ''
+        backgroundColor: oc.gray[0],
+        hoverColor: oc.gray[2],
+        activeColor: oc.gray[4],
+        color: oc.cyan[6]
     },
     tertiary: {
-        backgroundColor: '',
-        hoverColor: '',
-        activeColor: '',
-        color: ''
+        backgroundColor: oc.gray[0],
+        hoverColor: oc.gray[2],
+        activeColor: oc.gray[4],
+        color: oc.blue[6]
     }
 };
 

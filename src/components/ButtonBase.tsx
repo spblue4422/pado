@@ -7,7 +7,7 @@ interface ButtonBaseWrapperProps {
 
 export interface ButtonBaseProps extends React.ComponentPropsWithoutRef<'button'> {
     disabled: boolean;
-}
+}   
 
 const ButtonBaseWrapper = styled.button<ButtonBaseWrapperProps>`
     display: inline-flex;
