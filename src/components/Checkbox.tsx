@@ -64,6 +64,14 @@ const CheckboxWrapper = styled.div`
     color: ${(props) => props.color};
 `;
 
+const CheckboxLabel = styled.label`
+    color: ${oc.gray[9]};
+    font-weight: noraml;
+    font-size: 12px;
+    display: flex;
+    text-align: center;
+`;
+
 //display: none 으로 바꿔도될지 생각해보장
 const DefaultCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: none;
@@ -78,8 +86,8 @@ const DefaultCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const CustomCheckbox = styled.div<CustomCheckboxProps>`
     display: inline-block;
-    width: 1px;
-    height: 1px;
+    width: 15px;
+    height: 15px;
     background-color: ${(props) => (props.isChecked ? props.theme.boxColor : oc.gray[0])};
     border-radius: 2px;
 
@@ -99,6 +107,12 @@ const CustomCheckbox = styled.div<CustomCheckboxProps>`
     }
 `;
 
+const CheckImg = styled.svg`
+    fill: none;
+    stroke: white;
+    stroke-width: 1px;
+`;
+
 //label 추가해줘야함.
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     (
@@ -113,13 +127,19 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
         return (
             <CheckboxWrapper {...props}>
-                <DefaultCheckbox
-                    disabled={isDisabled}
-                    checked={isChecked}
-                    onClick={handleChkEvent}
-                ></DefaultCheckbox>
-                <CustomCheckbox isChecked={isChecked} theme={theme} ref={ref}></CustomCheckbox>
-                {children}
+                <CheckboxLabel>
+                    <DefaultCheckbox
+                        disabled={isDisabled}
+                        checked={isChecked}
+                        onClick={handleChkEvent}
+                    ></DefaultCheckbox>
+                    <CustomCheckbox isChecked={isChecked} theme={theme} ref={ref}>
+                        <CheckImg viewBox="0 0 30 30">
+                            <polyline points="4 18 12 27 26 4" />
+                        </CheckImg>
+                    </CustomCheckbox>
+                    {children}
+                </CheckboxLabel>
             </CheckboxWrapper>
         );
     }
