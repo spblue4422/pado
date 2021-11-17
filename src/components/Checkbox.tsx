@@ -61,7 +61,7 @@ interface CustomCheckboxProps
 }
 
 const CheckboxWrapper = styled.div`
-    color: ${(props) => props.color};
+    margin: auto;
 `;
 
 const CheckboxLabel = styled.label`
@@ -113,7 +113,6 @@ const CheckImg = styled.svg`
     stroke-width: 1px;
 `;
 
-//label 추가해줘야함.
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     (
         { isDisabled = false, isDefaultChecked = false, variant = 'ocean', children, ...props },
@@ -126,7 +125,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         };
 
         return (
-            <CheckboxWrapper {...props}>
+            <CheckboxWrapper>
                 <CheckboxLabel>
                     <DefaultCheckbox
                         disabled={isDisabled}

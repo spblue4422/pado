@@ -9,7 +9,7 @@ export interface AvatarProps extends React.ComponentPropsWithoutRef<'div'> {
     figure: Figure;
     size: React.CSSProperties['width'];
     backgroundColor: React.CSSProperties['backgroundColor'];
-    img: React.ReactElement;
+    img?: React.ReactElement;
 }
 
 const AvatarWrapper = styled.div<AvatarWrapperProps>`

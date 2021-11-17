@@ -2,18 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-export type Border = 'round' | 'angeld';
+export type Border = 'round' | 'angled';
 
-export type CardVariant =
-    | 'white'
-    | 'ocean'
-    | 'gray'
-    | 'yellow'
-    | 'pink'
-    | 'blue'
-    | 'purple'
-    | 'green'
-    | 'black';
+export type CardVariant = 'white' | 'ocean' | 'yellow' | 'blue' | 'purple' | 'green' | 'black';
 
 interface VariantStyle {
     backgroundColor: React.CSSProperties['backgroundColor'];
@@ -29,16 +20,8 @@ const CardVariantMap: Record<CardVariant, VariantStyle> = {
         backgroundColor: oc.cyan[2],
         color: oc.gray[9]
     },
-    gray: {
-        backgroundColor: oc.gray[4],
-        color: oc.gray[9]
-    },
     yellow: {
         backgroundColor: oc.yellow[2],
-        color: oc.gray[9]
-    },
-    pink: {
-        backgroundColor: oc.pink[2],
         color: oc.gray[9]
     },
     blue: {
@@ -62,8 +45,6 @@ const CardVariantMap: Record<CardVariant, VariantStyle> = {
 export interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
     width: React.CSSProperties['width'];
     height: React.CSSProperties['height'];
-    padding: React.CSSProperties['padding'];
-    fontWeight: React.CSSProperties['fontWeight'];
     borderRadius: Border;
     variant: CardVariant;
 }
@@ -75,22 +56,21 @@ interface CardWrapperProps extends Omit<CardProps, 'variant'> {
 const CardWrapper = styled.div<CardWrapperProps>`
     width: ${(props) => props.width};
     heigth: ${(props) => props.height};
-    padding: ${(props) => props.padding};
-    font-weight: ${(props) => props.fontWeight};
+    padding: 5px;
+    font-weight: normal;
+    white-space: normal;
     border-radius: ${(props) => (props.borderRadius === 'round' ? '10px' : '0px')}
     background-color: ${(props) => props.theme.backgroundColor};
     color: ${(props) => props.theme.color};
 `;
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-    ({ width, height, padding, fontWeight, borderRadius, variant, children, ...props }, ref) => {
+    ({ width, height, borderRadius, variant, children, ...props }, ref) => {
         const theme = CardVariantMap[variant];
         return (
             <CardWrapper
                 width={width}
                 height={height}
-                padding={padding}
-                fontWeight={fontWeight}
                 borderRadius={borderRadius}
                 theme={theme}
                 ref={ref}

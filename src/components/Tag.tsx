@@ -17,7 +17,8 @@ const TagWrapper = styled.div<TagWrapperProps>`
     color: ${(props) => props.color};
     font-size: ${(props) => props.size};
     border-width: ${(props) => (props.border ? '2px' : '0px')};
-    bordercolor: ${(props) => props.borderColor};
+    border-color: ${(props) => props.borderColor};
+    border-radius: 25%;
 `;
 
 const Tag = React.forwardRef<HTMLDivElement, TagProps>(
