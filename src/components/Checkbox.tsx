@@ -110,7 +110,7 @@ const CustomCheckbox = styled.div<CustomCheckboxProps>`
 const CheckImg = styled.svg`
     fill: none;
     stroke: white;
-    stroke-width: 1px;
+    stroke-width: 3px;
 `;
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(

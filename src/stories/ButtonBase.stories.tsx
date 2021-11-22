@@ -32,7 +32,7 @@ export const Template: Story<ButtonBaseProps> = (args) => {
 
 Template.args = {
     disabled: true,
-    children: 'push'
+    children: 'Push'
 };
 
 export default {

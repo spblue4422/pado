@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import { Card, CardProps, CardVariant, Border } from '@src/components/Card';
+import { Card, CardProps, CardVariant } from '@src/components/Card';
 
 const Layout = styled.div`
     display: flex;
@@ -15,28 +15,27 @@ const Item = styled.div`
 `;
 
 export const Gallery: Story = () => {
-    //const borders: Border[] = ['round', 'angled'];
     const variants: CardVariant[] = [
         'white',
         'ocean',
-        'black',
-        'blue',
         'yellow',
+        'blue',
+        'purple',
         'green',
-        'purple'
+        'black'
     ];
     return (
         <Layout>
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-1`}>
-                    <Card width={'40px'} height={'20px'} borderRadius={'angled'} variant={variant}>
+                    <Card width={'60px'} height={'20px'} borderRadius={'angled'} variant={variant}>
                         Angled
                     </Card>
                 </Item>
             ))}
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-1`}>
-                    <Card width={'40px'} height={'20px'} borderRadius={'round'} variant={variant}>
+                    <Card width={'60px'} height={'20px'} borderRadius={'round'} variant={variant}>
                         Round
                     </Card>
                 </Item>

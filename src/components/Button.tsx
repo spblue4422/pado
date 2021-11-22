@@ -20,10 +20,10 @@ const ButtonVariantMap: Record<ButtonVariant, VariantStyle> = {
         color: oc.gray[0]
     },
     primary: {
-        backgroundColor: oc.cyan[1],
-        hoverColor: oc.cyan[2],
-        activeColor: oc.cyan[0],
-        color: oc.gray[1]
+        backgroundColor: oc.cyan[2],
+        hoverColor: oc.cyan[3],
+        activeColor: oc.cyan[4],
+        color: oc.gray[0]
     },
     secondary: {
         backgroundColor: oc.gray[0],
@@ -56,11 +56,11 @@ const ButtonWrapper = styled(ButtonBase)<ButtonWrapperProps>`
         background-color: ${(props) => props.theme.hoverColor};
     }
 
-    $:active:not(:disabled) {
+    &:active:not(:disabled) {
         background-color: ${(props) => props.theme.activeColor};
     }
-    $:disabled {
-        opacity: 0.5;
+    &:disabled {
+        opacity: 0.3;
         filter: blur(0.3px);
     }
 `;

@@ -19,14 +19,14 @@ export const Gallery: Story = () => {
         <Layout>
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-1`}>
-                    <Button fontWeight="normal" padding="3px" variant={variant} disabled={false}>
+                    <Button fontWeight="normal" padding="5px" variant={variant} disabled={false}>
                         Push
                     </Button>
                 </Item>
             ))}
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-2`}>
-                    <Button fontWeight="normal" padding="3px" variant={variant} disabled={true}>
+                    <Button fontWeight="normal" padding="5px" variant={variant} disabled={true}>
                         Push
                     </Button>
                 </Item>
@@ -41,9 +41,9 @@ export const Template: Story<ButtonProps> = (args) => {
 
 Template.args = {
     variant: 'default',
-    padding: '3px',
+    padding: '5px',
     fontWeight: 'normal',
-    children: 'push'
+    children: 'Push'
 };
 
 export default {

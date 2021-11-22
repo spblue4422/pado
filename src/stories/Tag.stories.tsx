@@ -14,60 +14,36 @@ const Item = styled.div`
     margin-right: 8px;
 `;
 
-const Gallery: Story = () => {
-    const border: boolean[] = [true, false];
-
+export const Gallery: Story = () => {
     return (
         <Layout>
-            {border.map((tf, idx) => (
-                <Item>
-                    <Tag
-                        backgroundColor={oc.gray[4]}
-                        color={oc.gray[8]}
-                        border={tf}
-                        borderColor={oc.gray[9]}
-                    >
-                        normal
-                    </Tag>
-                </Item>
-            ))}
-            {border.map((tf, idx) => (
-                <Item>
-                    <Tag
-                        backgroundColor={oc.cyan[1]}
-                        color={oc.cyan[7]}
-                        border={tf}
-                        borderColor={oc.cyan[8]}
-                    >
-                        ocean
-                    </Tag>
-                </Item>
-            ))}
-            {
-                <Item>
-                    <Tag
-                        backgroundColor={oc.cyan[6]}
-                        color={oc.cyan[0]}
-                        border={false}
-                        borderColor={oc.cyan[6]}
-                    >
-                        ocean-R
-                    </Tag>
-                </Item>
-            }
+            <Item id={`normal`}>
+                <Tag backgroundColor={oc.gray[4]} color={oc.gray[8]}>
+                    normal
+                </Tag>
+            </Item>
+            <Item id={`ocean`}>
+                <Tag backgroundColor={oc.cyan[1]} color={oc.cyan[7]}>
+                    ocean
+                </Tag>
+            </Item>
+            <Item id={'ocean-R'}>
+                <Tag backgroundColor={oc.cyan[6]} color={oc.cyan[0]}>
+                    ocean-R
+                </Tag>
+            </Item>
         </Layout>
     );
 };
 
-const Template: Story<TagProps> = (args) => {
+export const Template: Story<TagProps> = (args) => {
     return <Tag {...args}>{args.children}</Tag>;
 };
 
 Template.args = {
     backgroundColor: oc.cyan[1],
     color: oc.cyan[7],
-    border: true,
-    borderColor: oc.cyan[8]
+    children: 'tag'
 };
 
 export default {

@@ -55,11 +55,11 @@ interface CardWrapperProps extends Omit<CardProps, 'variant'> {
 
 const CardWrapper = styled.div<CardWrapperProps>`
     width: ${(props) => props.width};
-    heigth: ${(props) => props.height};
+    height: ${(props) => props.height};
     padding: 5px;
     font-weight: normal;
     white-space: normal;
-    border-radius: ${(props) => (props.borderRadius === 'round' ? '10px' : '0px')}
+    border-radius: ${(props) => (props.borderRadius === 'round' ? '10px' : '0px')};
     background-color: ${(props) => props.theme.backgroundColor};
     color: ${(props) => props.theme.color};
 `;
