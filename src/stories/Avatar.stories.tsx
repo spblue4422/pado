@@ -35,7 +35,7 @@ export const Template: Story<AvatarProps> = (args) => {
 Template.args = {
     figure: 'circle',
     size: '30px',
-    backgroundColor: oc.white[0]
+    backgroundColor: oc.gray[0]
 };
 
 export default {
