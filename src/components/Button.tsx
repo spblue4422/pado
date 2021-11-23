@@ -51,6 +51,7 @@ const ButtonWrapper = styled(ButtonBase)<ButtonWrapperProps>`
     border: none;
     border-radius: 3px;
     box-shadow: ${oc.gray[2]} 0px 1px 3px 0px;
+    display: inline-block;
 
     &:hover:not(:disabled) {
         background-color: ${(props) => props.theme.hoverColor};

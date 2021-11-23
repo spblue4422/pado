@@ -21,7 +21,7 @@ export const Gallery: Story = () => {
         <Layout>
             {shapes.map((shape, idx) => (
                 <Item key={idx}>
-                    <Avatar figure={shape} size={'60px'} backgroundColor={oc.gray[0]}></Avatar>
+                    <Avatar figure={shape} size={'60px'} backgroundColor={oc.gray[1]}></Avatar>
                 </Item>
             ))}
         </Layout>
@@ -35,7 +35,7 @@ export const Template: Story<AvatarProps> = (args) => {
 Template.args = {
     figure: 'circle',
     size: '60px',
-    backgroundColor: oc.gray[0]
+    backgroundColor: oc.gray[1]
 };
 
 export default {

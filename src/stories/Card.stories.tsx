@@ -28,15 +28,19 @@ export const Gallery: Story = () => {
         <Layout>
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-1`}>
-                    <Card width={'60px'} height={'20px'} borderRadius={'angled'} variant={variant}>
+                    <Card width={'60px'} height={'50px'} borderRadius={'angled'} variant={variant}>
                         Angled
+                        <br />
+                        Card
                     </Card>
                 </Item>
             ))}
             {variants.map((variant, idx) => (
                 <Item key={`${idx}-1`}>
-                    <Card width={'60px'} height={'20px'} borderRadius={'round'} variant={variant}>
+                    <Card width={'60px'} height={'50px'} borderRadius={'round'} variant={variant}>
                         Round
+                        <br />
+                        Card
                     </Card>
                 </Item>
             ))}
@@ -49,10 +53,11 @@ export const Template: Story<CardProps> = (args) => {
 };
 
 Template.args = {
-    width: '40px',
-    height: '20px',
+    width: '60px',
+    height: '50px',
     borderRadius: 'angled',
-    variant: 'ocean'
+    variant: 'ocean',
+    children: <>Angled<br/>Card</>
 };
 
 export default {

@@ -14,6 +14,7 @@ const TagWrapper = styled.div<TagWrapperProps>`
     color: ${(props) => props.color};
     padding: 5px;
     border-radius: 10px;
+    display: inline-block;
 `;
 
 export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
